@@ -26,28 +26,6 @@ while(n > 0):
 	Zcomputed = math.pow(x, 2) + math.pow(y, 2)
 	cross_entropy(Zcomputed, Zblackbox)
 	n = n - 1
-	
-# # random floating point pairs (x, y)
-# x = []
-# y = []
-# for i in range(10000):
-#     a = random.uniform(-100.0, 100.0)
-#     x.append(round(a, 2))
-#     a = random.uniform(-100.0, 100.0)
-#     y.append(round(a, 2))
-
-# # Generate d from 0 to 100
-# d = random.randint(0, 100)
-
-# # Zblackbox
-# Zblackbox = subprocess.check_output("./blackbox 1 2 3", shell = True)
-# Zblackbox = float(Zblackbox)
-# print(Zblackbox) 
-
-# # Zcomputed
-# for i in range(10000):
-# 	Zcomputed = math.pow(x[i], 2) + math.pow(y[i], 2)
-# 	# print(Zcomputed)
 
 
 
