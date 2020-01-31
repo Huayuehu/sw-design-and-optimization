@@ -1,5 +1,3 @@
-# reference: https://blog.csdn.net/qq_34364995/article/details/80518182
-
 a = [6, 14, 19, 24, 6, 7, 6, 24, 1, 3]
 
 outputlist = {}

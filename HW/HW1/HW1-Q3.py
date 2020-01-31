@@ -1,5 +1,3 @@
-# reference : https://blog.csdn.net/dsx1134500455/article/details/89249539
-
 list = ['hello', 'world', 'ni', 'hao']
 s = 'world'
 
