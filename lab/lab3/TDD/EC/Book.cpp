@@ -2,6 +2,7 @@
 // Created by Huayue Hua on 2020-02-06.
 //
 #include "Book.h"
+#include <stdlib.h>
 
 using namespace std;
 

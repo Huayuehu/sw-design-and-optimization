@@ -5,6 +5,7 @@
 #include "Book.h"
 #include <iostream>
 #include <fstream>
+#include <cassert>
 
 using namespace std;
 
@@ -79,7 +80,7 @@ void BookTester::testConstructor() {
 void BookTester::testReadFrom() {
     cout << "- readFrom()..." << flush;
 
-    ifstream fin("/Users/insane/Desktop/USC/20spring/595/lab/lab3/TDD/EC/inputList.txt");
+    ifstream fin("./inputList.txt");
     assert(fin.is_open());
     Book Book1;
 
