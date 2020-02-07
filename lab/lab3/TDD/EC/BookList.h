@@ -1,5 +1,5 @@
 //
-// Created by Insane on 2020-02-06.
+// Created by Huayue Hua on 2020-02-06.
 //
 
 #ifndef EC_BOOKLIST_H
@@ -13,9 +13,10 @@ private:
     vector<Book> allBooks;
 public:
     explicit BookList(const string& fileName);
-    void findBook(const string &fileName, string bookName, ostream &out);
 
-    void findBook(const string &fileName, unsigned bookId, ostream &out);
+    void findBook(string bookName, ostream &out);
+
+    void findBook(unsigned bookId, ostream &out);
 
     void findBooks(string bookAuthor, ostream& out);
 };

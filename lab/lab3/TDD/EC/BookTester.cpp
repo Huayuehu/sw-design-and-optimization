@@ -1,5 +1,5 @@
 //
-// Created by Insane on 2020-02-06.
+// Created by Huayue Hua on 2020-02-06.
 //
 #include "BookTester.h"
 #include "Book.h"
@@ -12,11 +12,11 @@ void BookTester::runTests() {
     cout << "Test class Book..." << endl;
     testConstructor();
     testReadFrom();
-    cout << "All tests passed!" << endl;
+    cout << "All tests passed!" << endl << endl;
 }
 
 void BookTester::testConstructor() {
-    cout << "- constructor..." << endl;
+    cout << "- constructor..." << flush;
 
     // expilict-value constructor
     Book Book1("To kill a Mocking bird", 400148, "Harper Lee", "07/16/1960", "$8", "Available");
@@ -142,6 +142,7 @@ void BookTester::testReadFrom() {
     assert(Book1.getPrice() == "$8");
     assert(Book1.getStatus() == "Available");
     cout << " 5 " << flush;
+    fin.close();
 
     cout << " Passed!" << endl;
 }

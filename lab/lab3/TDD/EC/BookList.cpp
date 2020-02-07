@@ -1,5 +1,5 @@
 //
-// Created by Insane on 2020-02-06.
+// Created by Huayue Hua on 2020-02-06.
 //
 
 #include "BookList.h"
@@ -23,34 +23,42 @@ BookList::BookList(const string &fileName) {
     fin.close();
 }
 
-void BookList::findBook(const string &fileName, string bookName, ostream &out) {
-    BookList list(fileName);
-    for (auto &allBook : list.allBooks) {
+void BookList::findBook(string bookName, ostream &out) {
+    for (auto &allBook : this->allBooks) {
         if (allBook.getBookName() == bookName) {
             out << allBook.getBookName() << '\n'
-            << allBook.getBookId() << '\n'
-            << allBook.getBookAuthor() << '\n'
-            << allBook.getYearofPub() << '\n'
-            << allBook.getPrice() << '\n'
-            << allBook.getStatus() << '\n';
+                << allBook.getBookId() << '\n'
+                << allBook.getBookAuthor() << '\n'
+                << allBook.getYearofPub() << '\n'
+                << allBook.getPrice() << '\n'
+                << allBook.getStatus() << '\n';
         }
     }
 }
 
-void BookList::findBook(const string &fileName, unsigned bookId, ostream &out) {
-    BookList list(fileName);
-    for (int i = 0; i < list.allBooks.size(); i++) {
-        if (list.allBooks[i].getBookId() == bookId) {
-            out << list.allBooks[i].getBookName() << '\n'
-                << list.allBooks[i].getBookId() << '\n'
-                << list.allBooks[i].getBookAuthor() << '\n'
-                << list.allBooks[i].getYearofPub() << '\n'
-                << list.allBooks[i].getPrice() << '\n'
-                << list.allBooks[i].getStatus() << '\n';
+void BookList::findBook(unsigned bookId, ostream &out) {
+    for (auto &allBook : this->allBooks) {
+        if (allBook.getBookId() == bookId) {
+            out << allBook.getBookName() << '\n'
+                << allBook.getBookId() << '\n'
+                << allBook.getBookAuthor() << '\n'
+                << allBook.getYearofPub() << '\n'
+                << allBook.getPrice() << '\n'
+                << allBook.getStatus() << '\n';
         }
     }
 }
 
 void BookList::findBooks(string bookAuthor, ostream &out) {
-
+    for (auto &allBook : this->allBooks) {
+        if (allBook.getBookAuthor() == bookAuthor) {
+            out << allBook.getBookName() << '\n'
+                << allBook.getBookId() << '\n'
+                << allBook.getBookAuthor() << '\n'
+                << allBook.getYearofPub() << '\n'
+                << allBook.getPrice() << '\n'
+                << allBook.getStatus() << '\n' << '\n';
+        }
+    }
 }
+
