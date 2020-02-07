@@ -1,0 +1,42 @@
+To kill a Mocking bird
+400148
+Harper Lee
+07/16/1960
+$8
+Available
+ 
+The Book Thief
+400149
+Markus Zusak
+07/11/2005
+$10
+Available
+ 
+The Great Gatsby
+400150
+F. Scott Fitzgerald
+05/15/1980
+$9
+Unvailable
+ 
+The Kite Runner
+400168 
+Khaled Hosseini
+07/23/2000
+$12
+Unvailable
+ 
+Lord of the Flies
+400176
+William Golding
+08/18/1980
+$14
+Available
+ 
+Go Set a Watchman
+400198
+Harper Lee
+07/16/1972
+$8
+Available
+
