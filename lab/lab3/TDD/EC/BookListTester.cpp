@@ -6,6 +6,7 @@
 #include "Book.h"
 #include <iostream>
 #include <fstream>
+#include <cassert>
 
 using namespace std;
 
@@ -17,15 +18,15 @@ void BookListTester::testFindBook() {
      * First, test find book via book name
      */
     cout << "1. Find book via book name" << flush;
-    ofstream fout1("/Users/insane/Desktop/USC/20spring/595/lab/lab3/TDD/EC/output.txt");
+    ofstream fout1("./output.txt");
     assert(fout1.is_open());
 
-    BookList blist("/Users/insane/Desktop/USC/20spring/595/lab/lab3/TDD/EC/inputList.txt");
+    BookList blist("./inputList.txt");
     blist.findBook("To kill a Mocking bird", fout1);
     fout1.close();
 
     // use readFrom() to see whether findBook() worked
-    ifstream fin1("/Users/insane/Desktop/USC/20spring/595/lab/lab3/TDD/EC/output.txt");
+    ifstream fin1("./output.txt");
     assert(fin1.is_open());
     Book Book1;
     Book1.readFrom(fin1);
@@ -43,13 +44,13 @@ void BookListTester::testFindBook() {
      * Second, test find book via book ID
      */
     cout << "2. Find book via book ID" << flush;
-    ofstream fout2("/Users/insane/Desktop/USC/20spring/595/lab/lab3/TDD/EC/output.txt");
+    ofstream fout2("./output.txt");
     assert(fout2.is_open());
     blist.findBook(400148, fout2);
     fout2.close();
 
     // use readFrom() to see whether findBook() worked
-    ifstream fin2("/Users/insane/Desktop/USC/20spring/595/lab/lab3/TDD/EC/output.txt");
+    ifstream fin2("./output.txt");
     assert(fin2.is_open());
     Book Book2;
     Book2.readFrom(fin2);
@@ -67,13 +68,13 @@ void BookListTester::testFindBook() {
      * Third, find all the books via author
      */
     cout << "3. Find all books written by the author" << flush;
-    ofstream fout3("/Users/insane/Desktop/USC/20spring/595/lab/lab3/TDD/EC/output.txt");
+    ofstream fout3("./output.txt");
     assert(fout3.is_open());
     blist.findBooks("Harper Lee", fout3);
     fout3.close();
 
     // use readFrom() to see whether findBook() worked
-    ifstream fin3("/Users/insane/Desktop/USC/20spring/595/lab/lab3/TDD/EC/output.txt");
+    ifstream fin3("./output.txt");
     assert(fin3.is_open());
     Book Book3;
     Book3.readFrom(fin3);
