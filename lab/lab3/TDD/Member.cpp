@@ -1,5 +1,5 @@
 //
-// Created by Insane on 2020-02-05.
+// Created by Huayue Hua on 2020-02-05.
 //
 
 # include "Member.h"
@@ -89,4 +89,24 @@ void Member::readFrom(istream& in) {
     string yearString;
     getline(in, yearString);
     this -> year = atoi(yearString.c_str());
+}
+
+/*
+ * Member output...
+ * @param: out, an ostream
+ * Postcondition: out contains username, a newline,
+ *                             name, a newline,
+ *                             datebirth, a newline,
+ *                             email, a newline,
+ *                             phonenumber, a newline,
+ *                             year, a newline.
+ */
+void Member::writeTo(ostream& out) {
+    out << this -> username << '\n'
+        << this -> name << '\n'
+        << this -> datebirth << '\n'
+        << this -> email << '\n'
+        << this -> phonenumber  << '\n'
+        << this -> year  << '\n';
+
 }

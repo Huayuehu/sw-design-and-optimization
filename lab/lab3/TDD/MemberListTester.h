@@ -9,6 +9,7 @@ class MemberListTester {
 public:
     void runTests();
     void testConstructors();
+    void testSearchMember();
 };
 
 #endif //TEST_MEMBERLISTTESTER_H

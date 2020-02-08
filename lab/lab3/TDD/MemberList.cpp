@@ -1,8 +1,9 @@
 //
-// Created by Insane on 2020-02-06.
+// Created by Huayue Hua on 2020-02-06.
 //
 #include "MemberList.h"
 #include <fstream>
+#include <cassert>
 
 /*
  * MemberList constructor
@@ -33,7 +34,45 @@ MemberList::MemberList(const string& fileName) {
  * Retrieve length of the Member list
  * Return: the number of Members in the list.
  */
-
 unsigned MemberList::getNumMembers() const {
     return totalMembers.size();
+}
+
+void MemberList::searchMember(string username, ostream &out) {
+    for (int i = 0; i < this->totalMembers.size(); i++) {
+        if (this->totalMembers[i].getUsername() == username) {
+            out << this->totalMembers[i].getUsername() << '\n'
+                << this->totalMembers[i].getName() << '\n'
+                << this->totalMembers[i].getDateBirth() << '\n'
+                << this->totalMembers[i].getEmail() << '\n'
+                << this->totalMembers[i].getPhoneNumber() << '\n'
+                << this->totalMembers[i].getYear() << '\n';
+        }
+    }
+}
+
+void MemberList::searchMembers(string email, ostream &out) {
+    for (int i = 0; i < this->totalMembers.size(); i++) {
+        if (this->totalMembers[i].getEmail() == email) {
+            out << this->totalMembers[i].getUsername() << '\n'
+                << this->totalMembers[i].getName() << '\n'
+                << this->totalMembers[i].getDateBirth() << '\n'
+                << this->totalMembers[i].getEmail() << '\n'
+                << this->totalMembers[i].getPhoneNumber() << '\n'
+                << this->totalMembers[i].getYear() << '\n';
+        }
+    }
+}
+
+void MemberList::searchMembers(unsigned year, ostream &out) {
+    for (int i = 0; i < this->totalMembers.size(); i++) {
+        if (this->totalMembers[i].getYear() == year) {
+            out << this->totalMembers[i].getUsername() << '\n'
+                << this->totalMembers[i].getName() << '\n'
+                << this->totalMembers[i].getDateBirth() << '\n'
+                << this->totalMembers[i].getEmail() << '\n'
+                << this->totalMembers[i].getPhoneNumber() << '\n'
+                << this->totalMembers[i].getYear() << '\n' << '\n';
+        }
+    }
 }

@@ -1,5 +1,5 @@
 //
-// Created by Insane on 2020-02-05.
+// Created by Huayue Hua on 2020-02-05.
 //
 
 #ifndef TEST_MEMBER_H
@@ -28,6 +28,7 @@ public:
     string getPhoneNumber();
     unsigned getYear();
     void readFrom(istream& in);
+    void writeTo(ostream& out);
 };
 
 #endif //TEST_MEMBER_H
