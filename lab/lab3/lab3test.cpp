@@ -1,5 +1,5 @@
 //
-// Created by Huayue Hua on 2020-02-05.
+// Created by Insane on 2020-02-07.
 //
 
 #include <iostream>
@@ -8,9 +8,9 @@
 #include <stdlib.h>
 #include <cstdlib>
 #include <list>
-#include <cassert>
 
 using namespace std;
+
 
 class Number {
 private:
@@ -26,16 +26,16 @@ public:
     bool check_independence(NumberSet subSet);
 };
 
-bool NumberSet::check_independence(NumberSet subSet) {
-   for (int i = 0; i < 10; i++) {
-       for (int j = 0; j < 10; j++) {
-           if (nums[i].get_value() == subSet.nums[j].get_value()) {
-               return false;
-           }
-       }
-   }
-   return true;
-}
+//bool NumberSet::check_independence(NumberSet subSet) {
+//    for (int i = 0; i < 10; i++) {
+//        for (int j = 0; j < 10; j++) {
+//            if (nums[i].get_value() == subSet.nums[j].get_value()) {
+//                return false;
+//            }
+//        }
+//    }
+//    return true;
+//}
 
 class HashTable {
 public:
@@ -43,7 +43,7 @@ public:
     int value[9000];
     HashTable();
     int hash(int x);
-    void add(int x);
+    HashTable add(NumberSet subSet);
     bool search(int x);
 };
 
@@ -54,19 +54,26 @@ HashTable::HashTable() {
     }
 }
 
+
 int HashTable::hash(int x) {
     int i1 = x % 20;
     int res = 23 - (i1 % 23);
     return res;
 }
 
-void HashTable::add(int x) {
-    int i = 0;
-    if(hashtable[hash(x)] != 0){
+HashTable HashTable::add(NumberSet subSet) {
+    cout<<"ADD"<<endl;
+    HashTable h;
+    for (int i = 0; i < 10; i++) {
+        int x = subSet.nums[i].get_value();
+        if(hashtable[hash(x)] != 0){
+        }
+        int index = hash(x);
+        // cout<<"x: "<<x<<" index: "<<index<<endl;
+        hashtable[index] = 1;
+        value[index] = x;
     }
-    int index = hash(x);
-    hashtable[index] = 1;
-    value[index] = x;
+    return h;
 }
 
 // return true if x is in the hash table
@@ -82,13 +89,12 @@ public:
 };
 
 bool FastNumberSet::check_independence(NumberSet subSet) {
-    HashTable h;
-    for (int i = 0; i < 10; i++) {
-        h.add(nums[i].get_value());
-    }
+    HashTable h1, h2;
+    h2 = h1.add(subSet);
 
     for (int i = 0; i < 10; i++) {
-        bool b = h.search(subSet.nums[i].get_value());
+        cout<<"to check other subset nums["<<i<<"]."<<endl;
+        bool b = h2.search(subSet.nums[i].get_value());
         if (b == true) {return false;}
     }
     return true;
@@ -103,6 +109,7 @@ int main(int argc, char *argv[]) {
 
     ifstream input_file(argv[1]);
     ofstream output_file("./output_hash.txt");
+
     assert(input_file.is_open());
     assert(output_file.is_open());
 
@@ -117,6 +124,7 @@ int main(int argc, char *argv[]) {
 
     for (int i = 0; i < 20; i++) {
         for (int j = i + 1; j < 20; j++) {
+            cout<<"subset i, subset j: "<<i<<", "<<j<<endl;
             if (!subSets[i].check_independence(subSets[j])) {
                 output_file << "N";
                 output_file.close();
@@ -129,3 +137,4 @@ int main(int argc, char *argv[]) {
     output_file.close();
     return 0;
 }
+
