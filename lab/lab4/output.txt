@@ -1,0 +1,8 @@
+/********************************/
+
+Linear search iteration times: 92
+The sorted row including FirstNum: 42, 99, 193, 391, 536, 661, 683, 718, 779, 968
+The index of FirstNum obtained from the binary search: 1
+The iteration time of using the binary search: 2
+
+/********************************/
