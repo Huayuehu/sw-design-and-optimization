@@ -14,7 +14,7 @@ public:
 };
 
 int Matrix::linear_search(int num, ostream &out) {
-    int count = 0;
+    int count = 1;
     for (int k = 1 ; k < 10; k++) {
         if (value[0][k] == num) {
             out << "Iteration number of linear search for FirstNum: " << count << endl;
