@@ -1,0 +1,11 @@
+Final Distance of SA Method: 37439
+10
+2
+4
+5
+8
+9
+1
+6
+3
+7

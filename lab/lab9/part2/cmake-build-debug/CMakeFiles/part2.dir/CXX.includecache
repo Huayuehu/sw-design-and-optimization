@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/insane/Desktop/USC/20spring/595/lab/lab9/part2/main.cpp
+iostream
+-
+math.h
+-
+fstream
+-
+random
+-
+time.h
+-
+stdio.h
+-
+ctime
+-
+
