@@ -1,0 +1,19 @@
+h1 {
+	color: purple;
+	font-family: Rockwell;
+	list-style-type: none; 
+	text-align: center;
+}
+
+table,th,td {
+	text-align: center;
+	border: 2px solid black;
+	border-collapse: collapse;
+	color: #00aa00;
+	width: 600px;
+	font-family: Verdana;
+	margin: auto;
+}
+
+
+

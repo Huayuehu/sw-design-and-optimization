@@ -2,6 +2,8 @@
 Name: Huayue Hua
 USC ID: 9817961224
 """
+# Commands: python3 HuayueHua_PI_graph_generator.py
+
 import HuayueHua_PI_tree_checker as tc
 import random
 import time
@@ -12,7 +14,7 @@ NODE_SIZE = 8
 
 
 def create_graph(node_num, edge_num):
-    filename = "/Users/insane/Desktop/USC/20spring/595/lab/lab10/Part I/input.txt"
+    filename = "./input.txt"
     fout = open(filename, 'w')
 
     if node_num == 0 and edge_num == 0:

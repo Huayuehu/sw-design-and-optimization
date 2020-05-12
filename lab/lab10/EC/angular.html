@@ -1,0 +1,81 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <title>Animal Crossing Chart with Greeting</title>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div>     
+        <label>Name:</label>
+        <input type="text" ng-model="yourName" placeholder="Enter a name here">
+        <hr>
+        <h1>Hello! {{yourName}}!</h1>
+
+        <h1>Look at My Cute Animal Villagers</h1>
+    </div>
+
+    <div>
+        <table border="3">
+            <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Personality</th>
+            </tr>
+            </thead>
+
+
+            <tbody>
+                <!-- 仙仙 -->
+                <tr>
+                    <td>
+                        <img src="Gladys.png" height="420px" width="240px">
+                    </td>
+                    <td><a href="https://nookipedia.com/wiki/Gladys"> Gladys </a></td>
+                    <td>Normal</td>
+                </tr>
+
+                <!-- 光雄 -->
+                <tr>
+                    <td>
+                        <img src="Hornsby.png" height="400px" width="240px">
+                    </td>
+                    <td><a href="https://nookipedia.com/wiki/Hornsby"> Hornsby </a></td>
+                    <td>Lazy</td>
+                </tr>
+
+                <!-- 花寿司 -->
+                <tr>
+                    <td>
+                        <img src="Iggly.png" height="240px" width="240px">
+                    </td>
+                    <td><a href="https://nookipedia.com/wiki/Iggly"> Iggly </a></td>
+                    <td>Jock</td>
+                </tr>
+
+                <!-- 阿田 -->
+                <tr>
+                    <td>
+                        <img src="Tad.png" height="360px" width="240px">
+                    </td>
+                    <td><a href="https://nookipedia.com/wiki/Tad"> Tad </a></td>
+                    <td>Jock</td>
+                </tr>
+
+                <!-- 柠檬娜 -->
+                <tr>
+                    <td>
+                        <img src="Lolly.png" height="480px" width="240px">
+                    </td>
+                    <td><a href="https://nookipedia.com/wiki/Lolly"> Lolly </a></td>
+                    <td>Normal</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

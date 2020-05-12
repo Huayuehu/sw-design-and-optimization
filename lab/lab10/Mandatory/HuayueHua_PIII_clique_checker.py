@@ -2,7 +2,9 @@
 Name: Huayue Hua
 USC ID: 9817961224
 """
-import HuayueHua_PI_tree_checker as tc
+# Commands: python3 HuayueHua_PIII_clique_checker.py
+
+import HuayueHua_PIII_max_clique_calc as mcc
 import random
 import time
 
@@ -12,7 +14,7 @@ NODE_SIZE = 8
 
 
 def create_graph(node_num, edge_num):
-    filename = "/Users/insane/Desktop/USC/20spring/595/lab/lab10/Part I/input.txt"
+    filename = "./input.txt"
     fout = open(filename, 'w')
 
     if node_num == 0 and edge_num == 0:
@@ -51,19 +53,19 @@ if __name__ == '__main__':
     print("------------------------- case 1: 0 node, 0 edge -------------------------")
     print("Graph 1")
     create_graph(0, 0)
-    tc.main()
+    mcc.main()
 
     # case 2: fully connected (with 5 nodes) x 1
     print("----------------- case 2: fully connected (with 5 nodes) -----------------")
     print("Graph 2")
     create_graph(5, 10)
-    tc.main()
+    mcc.main()
 
     # case 3: at least 5 nodes, 2 edges x 2
     print("----------------------- case 3: 6 nodes, 2 edges -------------------------")
     print("Graph 3")
     create_graph(6, 2)
-    tc.main()
+    mcc.main()
 
     # case 4: other scenario
     print("------------------------ case 4: other scenarios -------------------------")
@@ -74,5 +76,5 @@ if __name__ == '__main__':
         max_edge = node_num * (node_num - 1) / 2
         edge_num = random.randint(0, max_edge)
         create_graph(node_num, edge_num)
-        tc.main()
+        mcc.main()
         n = n + 1
