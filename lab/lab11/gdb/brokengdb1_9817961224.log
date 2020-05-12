@@ -1,0 +1,75 @@
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.04) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from test...done.
+(gdb) b main
+Breakpoint 1 at 0x40099e: file brokengdb1.cpp, line 8.
+(gdb) b 18
+Breakpoint 2 at 0x400a3c: file brokengdb1.cpp, line 18.
+(gdb) run
+Starting program: /home/student/test 
+
+Breakpoint 1, main () at brokengdb1.cpp:8
+8	{
+(gdb) n
+10	    cout<<"Please enter n:"<<endl;
+(gdb) n
+Please enter n:
+11	    cin>>n;
+(gdb) n
+12	    long val=factorial(n);
+(gdb) n
+
+Breakpoint 2, factorial (n=5) at brokengdb1.cpp:21
+21	    if(n)
+(gdb) n
+22	        return  factorial(n--)*n;
+(gdb) p[Kn
+
+Breakpoint 2, factorial (n=5) at brokengdb1.cpp:21
+21	    if(n)
+(gdb) p n
+$1 = 5
+(gdb) n
+22	        return  factorial(n--)*n;
+(gdb) p n
+$2 = 5
+(gdb) n
+
+Breakpoint 2, factorial (n=5) at brokengdb1.cpp:21
+21	    if(n)
+(gdb) p n
+$3 = 5
+(gdb) n
+22	        return  factorial(n--)*n;
+(gdb) n
+
+Breakpoint 2, factorial (n=5) at brokengdb1.cpp:21
+21	    if(n)
+(gdb) p n
+$4 = 5
+(gdb) n
+22	        return  factorial(n--)*n;
+(gdb) n
+
+Breakpoint 2, factorial (n=5) at brokengdb1.cpp:21
+21	    if(n)
+(gdb) p n
+$5 = 5
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 2318] will be killed.
+
+Quit anyway? (y or n) y
